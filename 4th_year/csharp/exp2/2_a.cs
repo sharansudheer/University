@@ -9,6 +9,7 @@ public class bank
     }
     public void debit(ref main_balance)
     { 
+      // using ref main_bal for testing
       // use accno to get the main balance but how to get the list as a var
       Console.WriteLine("Enter the amount");
       int withd = int.Parse(Console.ReadLine());
@@ -44,6 +45,7 @@ public class bank
   }
   class current_acc : account{
     //cal 2.5% bank charge for withdrawal above 100,000
+    //using ref main balance for testing
     public override void debit(ref main_balance)
     { 
       // use accno to get the main balance but how to get the list as a var
