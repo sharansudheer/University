@@ -1,4 +1,3 @@
-//operator overloading
 using System;
 namespace OperatorOverloading
 {
@@ -11,6 +10,8 @@ namespace OperatorOverloading
             real = r;
             img = i;
         }
+        //
+        // + opertor overloading
         public static complex operator +(complex c1, complex c2)
         {
             complex temp = new complex();
@@ -21,6 +22,62 @@ namespace OperatorOverloading
         public void Display()
         {
             Console.WriteLine($"{real} + i{img}");
+        }
+        //
+        // " - "  subtraction opertor
+        public static complex operator -(complex c1, complex c2)
+        {
+            complex temp = new complex();
+            temp.real = c1.real - c2.real;
+            temp.img = c1.img - c2.img;
+            return temp;
+        }
+        public void Display()
+        {
+            Console.WriteLine($"{real} + i{img}");
+        }
+        //
+        // " / " Divison opertor overloading
+        public static complex operator /(complex c1, complex c2)
+        {
+            complex temp = new complex();
+            if (c2.real && c2.img !=0){
+                temp.real = c1.real / c2.real;
+                temp.img = c1.img / c2.img;
+                return temp;
+            }
+            else{
+
+            }          
+        }
+        public void Display()
+        {
+            Console.WriteLine($"{real} + i{img}");
+        }
+        //
+        // " * " opertor
+        public static complex operator *(complex c1, complex c2)
+        {
+            complex temp = new complex();
+            if (c1.real||c2.real||c2.img||c2.img !=0){
+                temp.real = c1.real * c2.real;
+                temp.img = c1.img * c2.img;
+                return temp;
+            }
+            else{
+                temp.real=0;
+                temp.img=0;
+            }
+                
+        }
+        public void Display()
+        {
+            if(real||img!=0){
+                Console.WriteLine($"{real} + i{img}");
+            }
+            else{
+                Console.WriteLine(0);
+            }
         }
     };
 
