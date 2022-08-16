@@ -2,61 +2,64 @@
 using System;
 namespace OperatorOverloading
 {
-    public struct Price
-{
-    public float Amount;
-    public string CurrencyCode;
-    public float ExchangeRateWRTUSD;
-    public Price(float fAmount, string sCurrencyCode,
-             float fExchangeRateWRTUSD)
-{
-    this.Amount = fAmount;
-    this.CurrencyCode=sCurrencyCode;
-    this.ExchangeRateWRTUSD = fExchangeRateWRTUSD;
+    public class money
+    {
+        private int rupees;
+        private int paise;
+        public money(int r = 0, int i = 0)
+        {
+            rupees = r;
+            paise = i;
+        }
+        //
+        // + opertor overloading
+        public static money operator +(money c1, money c2)
+        {
+            money temp = new money();
+            int goat=c1.paise+c2.paise;
+            if (goat>=100){
+                temp.rupees = c1.rupees + c2.rupees + (goat/100);
+                temp.paise = (goat-((goat/100)*100));
+            }       
+            else{
+                temp.rupees = c1.rupees + c2.rupees;
+                temp.paise = c1.paise + c2.paise;
+            }
+            return temp;
+        }
+        
+        
+        public void Display()
+        {
+            //if(rupees||paise!=0){
+                Console.WriteLine($"{rupees} rupees + {paise} paise");
+            //}
+            //else{
+                //Console.WriteLine(0);
+            //}
+        }
+    };
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            public int r1,r2,p1,p2;
+            Console.WriteLine("Enter the rupees and paise for set 1")
+            r1 = int.Parse (Console.ReadLine ());
+            p1 = int.Parse (Console.ReadLine ());
+            Console.WriteLine("Enter the rupees and paise for set 2")
+            r2 = int.Parse (Console.ReadLine ());
+            p2 = int.Parse (Console.ReadLine ());
+            money c1 = new money(r1, p1);
+          
+            money c2 = new money(r2, p2);
+            
+            money c4 = c1 + c2;
+            c4.Display();
+            
+        }
+    }
 }
-public static Price operator +(Price p1, Price p2)
-{
-Price p3;
-//Convert both currencies to a base currency
-float p1InUSD = p1.Amount * p1.ExchangeRateWRTUSD;
-float p2InUSD = p2.Amount * p2.ExchangeRateWRTUSD;
 
-// Add the two prices in the base currency
-// Convert the result to the first currency type
-float p3Converted = (p1InUSD + p2InUSD) /
-                      p1.ExchangeRateWRTUSD;
-p3 = new Price(p3Converted,
-            p1.CurrencyCode,
-            p1.ExchangeRateWRTUSD);
-            if (p1.ExchangeRateWRTUSD ==
-     p2.ExchangeRateWRTUSD)
-{
-    p3 = new Price(p1.Amount+p2.Amount,
-           p1.CurrencyCode,
-           p1.ExchangeRateWRTUSD);
-}
-else
-{
-//Convert both currencies to a base currency
-
-}
-}
-
-return p3;
-}
-public static void Main (string[]args){
-    Price keyboardPrice =
-   new Price(40,"AUS",(float).6);
-
-Price mousePrice =
-   new Price(20, "EUR", (float).8);
-
-Price Total = keyboardPrice + mousePrice;
-
-MessageBox.Show("Total Order Price is: " +
-   Total.Amount.ToString());
-}
-}
-
-
-
+    
