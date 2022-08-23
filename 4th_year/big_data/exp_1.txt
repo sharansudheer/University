@@ -1,9 +1,31 @@
 1. Create a company database
-2. Create a collection called “customer” with the id, Customer name, address, phono no,
-Email, postal code.
+Ans - use company
+
+2. Create a collection called “customer” with the id, Customer name, address, phono no, Email, postal code.
+Ans - db.createCollection("customer")  
+
 3. Insert 3 documents in to the customer collection
+Ans - MongoDB creates a collection automatically when we insert documents into it.
+db.customer.insert(
+  {
+    _id:1, 
+    cusname:"Rishi",
+    addr:"MP", phoneno:1122323, 
+    email:"horny@hotmail.com",
+    postcd:1233
+  }
+)
+
 4. Insert a document into the customer collection with only the first two fields.
+Ans - 
+db.customer.insert(
+  {
+    _id:2, 
+    cusname:"Krishi",
+  }
+)
 5. Insert a document into the customer collection with new fields age and DOB.
+Ans - 
 6. Insert a document into the customer collection with new field “hobby” using save
  command and observe the difference between save and insert.
 7. Display all the details in the customer collection.
