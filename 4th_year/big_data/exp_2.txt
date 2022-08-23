@@ -1,4 +1,4 @@
- 1. Display the details of customer whose age is > 40
+1. Display the details of customer whose age is > 40
 2. Display the details of the customer whose age is the minimum among all the customers.
 3. Display the average age of the customers.
 4. Sort the documents based on the customer’s name.
@@ -8,14 +8,26 @@
 8. Display the name of the customer starts with ‘L’
 9. Display the first 2 documents.
 10. Display the names of all customers in lowercase.
+
+Answers ->
+I need to convert it into a javascript function 
  
- 1.db.customer.find({$age :{$gt : 40}})
- 2. db.customer.aggregate([{$group : {_id : "_id", age_minimum : {$min : "$age"}}}])
- 3. db.customer.aggregate([{$group : {_id:"_id", avgage:{$avg:"$age" }}}])
- 4. db.customer.find().sort({name:1})
- 5. db.customer.find({},{"name":1, "address":1, "_id":0})
+1.db.customer.find({$age :{$gt : 40}})
+
+2. db.customer.aggregate([{$group : {_id : "_id", age_minimum : {$min : "$age"}}}])
+
+3. db.customer.aggregate([{$group : {_id:"_id", avgage:{$avg:"$age" }}}])
+
+4. db.customer.find().sort({name:1})
+
+5. db.customer.find({},{"name":1, "address":1, "_id":0})
+
 6. db.customer.aggregate([ {$project: {name: {$toUpper: “$name”}}}])
- 7. db.customer.find({name:/y$/})
- 8. db.customer.find({name: {$regex: /^h/i }})
+
+7. db.customer.find({name:/y$/})
+
+8. db.customer.find({name: {$regex: /^h/i }})
+
 9. db.customer.find().limit(2)
- 10. db.customer.aggregate([ {$project: {name: {$toLower: “$name”}}}])
+
+10. db.customer.aggregate([ {$project: {name: {$toLower: “$name”}}}])
