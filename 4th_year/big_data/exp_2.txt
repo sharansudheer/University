@@ -1,1 +1,10 @@
-Need to add it
+ db.customer.find({$age :{$gt : 40}})
+ 2. db.customer.aggregate([{$group : {_id : "_id", age_minimum : {$min : "$age"}}}])
+ 3. db.customer.aggregate([{$group : {_id:"_id", avgage:{$avg:"$age" }}}])
+ 4. db.customer.find().sort({name:1})
+ 5. db.customer.find({},{"name":1, "address":1, "_id":0})
+6. db.customer.aggregate([ {$project: {name: {$toUpper: “$name”}}}])
+ 7. db.customer.find({name:/y$/})
+ 8. db.customer.find({name: {$regex: /^h/i }})
+9. db.customer.find().limit(2)
+ 10. db.customer.aggregate([ {$project: {name: {$toLower: “$name”}}}])
