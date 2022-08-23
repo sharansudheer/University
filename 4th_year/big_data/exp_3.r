@@ -1,3 +1,25 @@
+# R Doesn't support multiline comments soo this looks really PRIMITIVE
+
+# QUESTIONS :-
+# 1. Create the data frame: Employee: (FName, LName, EID, Date of Joining, Address, Sex, Salary, Dept Name)
+# 2. Insert at least 7 employee’s data.
+# 3. Create the data frame: Department: (DName, DNo, No. of Employee’s)
+# 4. Insert at least 4 department data.
+# 5. Show the structure of the employee data frame.
+# 6. Show the structure of the department data frame.
+# 7. Print the summary of both data frame.
+# 8. Print the FName, LName and Dept Name in the data frame employee.
+# 9. Print the DName and No. of Employee’s in the department data frame.
+# 10. Print any 3 employer’s details.
+# 11. Print any 2 department details.
+# 12. Add column called “Year of experience” in Employee data frame.
+# 13. Add column called “Postal code” in Employee data frame.
+# 14. Show the structure of the final employee data frame.
+# 15. Show the structure of the final department data frame.
+
+
+# ANSWERS ->
+#1 AND 2
 emp.data <- data.frame(
 emp_id = c(1:7),
 emp_fname= c ("Sharan", "Rishabh", "Manoj", "Rohini", "Chin", "Alex", "Joel"),
