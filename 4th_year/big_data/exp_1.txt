@@ -1,0 +1,12 @@
+1. Create a company database
+2. Create a collection called “customer” with the id, Customer name, address, phono no,
+Email, postal code.
+3. Insert 3 documents in to the customer collection
+4. Insert a document into the customer collection with only the first two fields.
+5. Insert a document into the customer collection with new fields age and DOB.
+6. Insert a document into the customer collection with new field “hobby” using save
+ command and observe the difference between save and insert.
+7. Display all the details in the customer collection.
+8. Display all the details in the customer collection neatly formatted.
+9. Update the postal code of any one customer.
+10. Display the details of customer whose age is < 55
