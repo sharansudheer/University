@@ -1,45 +1,49 @@
-//VECTOR overloading Oppenheimer
-//NEED TO CHANGE C1 AND C2 INTO COORDINATES IN 2D PLANE, X`Y PLANE
 using System;
 namespace OperatorOverloading
 {
-    public class complex
+    public class vector
     {
-        private int real;
-        private int img;
-        public complex(int r = 0, int i = 0)
+        private int x;
+        private int y;
+        private int z;
+
+        public vector(int a = 0, int b = 0, int c = 0)
         {
-            real = r;
-            img = i;
+            x = a;
+            y = b;
+            z = c;
         }
         //
         // + opertor overloading
-        public static complex operator +(complex c1, complex c2)
+        public static vector operator +(vector c1, vector c2)
         {
-            complex temp = new complex();
-            temp.real = c1.real + c2.real;
-            temp.img = c1.img + c2.img;
+            vector temp = new vector();
+            temp.x = c1.x + c2.x;
+            temp.y = c1.y + c2.y;
+            temp.z = c1.z + c2.z;
             return temp;
         }
         
         //
         // " - "  subtraction opertor
-        public static complex operator -(complex c1, complex c2)
+        public static vector operator -(vector c1, vector c2)
         {
-            complex temp = new complex();
-            temp.real = c1.real - c2.real;
-            temp.img = c1.img - c2.img;
+            vector temp = new vector();
+            temp.x = c1.x - c2.x;
+            temp.y = c1.y - c2.y;
+            temp.z = c1.z - c2.z;
             return temp;
         }
         
         //
         // " / " Divison opertor overloading
-        public static complex operator /(complex c1, complex c2)
+        public static vector operator /(vector c1, vector c2)
         {
-            complex temp = new complex();
-            //if ((c2.real && c2.img) != 0){
-                temp.real = c1.real / c2.real;
-                temp.img = c1.img / c2.img;
+            vector temp = new vector();
+            //if ((c2.x && c2.y) != 0){
+                temp.x = c1.x / c2.x;
+                temp.y = c1.y / c2.y;
+                temp.y = c1.z / c2.z;
                 return temp;
             //}
                    
@@ -47,24 +51,25 @@ namespace OperatorOverloading
        
         //
         // " * " opertor
-        public static complex operator *(complex c1, complex c2)
+        public static vector operator *(vector c1, vector c2)
         {
-            complex temp = new complex();
-            //if (c1.real||c2.real||c2.img||c2.img !=0){
-                temp.real = c1.real * c2.real;
-                temp.img = c1.img * c2.img;
+            vector temp = new vector();
+            //if (c1.x||c2.x||c2.y||c2.y !=0){
+                temp.x = c1.x * c2.x;
+                temp.y = c1.y * c2.y;
+                temp.z = c1.z * c2.z;
                 return temp;
             //}
             /* else{
-                temp.real=0;
-                temp.img=0;
+                temp.x=0;
+                temp.y=0;
             } */
                 
         }
         public void Display()
         {
-            //if(real||img!=0){
-                Console.WriteLine($"{real} + i{img}");
+            //if(x||y!=0){
+                Console.WriteLine($"{x} x + {y} y + {z} z");
             //}
             //else{
                 //Console.WriteLine(0);
@@ -76,21 +81,21 @@ namespace OperatorOverloading
     {
         static void Main(string[] args)
         {
-            complex c1 = new complex(3, 7);
+            vector c1 = new vector(3, 7, 6);
           
-            complex c2 = new complex(5, 2);
+            vector c2 = new vector(5, 2, 4);
             
-            complex c4 = c1 + c2;
+            vector c4 = c1 + c2;
             c4.Display();
-            complex c5 = c1 - c2;
+            vector c5 = c1 - c2;
             c5.Display();
-            complex c6 = c1 * c2;
+            vector c6 = c1 * c2;
             c6.Display();
-            complex c7 = c1 / c2;
+            vector c7 = c1 / c2;
             c7.Display();
             
         }
     }
 }
 
-    
+// Stage 3 will be simple user interface
