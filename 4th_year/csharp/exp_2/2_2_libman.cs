@@ -1,4 +1,4 @@
-//LIBRARY MANAGEMENT SYSTEM
+//LIBRARY MANAGEMENT SYSTEM, LibMan, Not SuperMan
 using System;
 using System.Collections.Generic;
 public class library
