@@ -158,7 +158,7 @@ namespace Student{
     
   // START OF GAME OF THRONES
     
-    /* 
+ /* 
     using System;
 using System.Collections.Generic;
 public class bank
@@ -235,7 +235,7 @@ Public static void UpdateList()
 {
     var result = from r in list where r.ProductID == 2 select r;
     result.First().ProductName = “Chan”; 
-      */
+   
 
     }
     public override void createacc (ref name, actype){
@@ -292,7 +292,7 @@ Public static void UpdateList()
          
   }  
 }
-    */
+ 
   
   }
 }
