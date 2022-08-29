@@ -44,7 +44,7 @@ namespace OperatorOverloading
     {
         static void Main(string[] args)
         {
-            public int r1,r2,p1,p2;
+            int r1,r2,p1,p2;
             Console.WriteLine("Enter the rupees and paise for set 1");
             r1 = int.Parse (Console.ReadLine ());
             p1 = int.Parse (Console.ReadLine ());
