@@ -36,7 +36,7 @@ namespace OperatorOverloading
         public static complex operator /(complex c1, complex c2)
         {
             complex temp = new complex();
-            //if ((c2.real && c2.img) != 0){
+            //if ((c2.real & c2.img) != 0){
                 temp.real = c1.real / c2.real;
                 temp.img = c1.img / c2.img;
                 return temp;
@@ -49,7 +49,7 @@ namespace OperatorOverloading
         public static complex operator *(complex c1, complex c2)
         {
             complex temp = new complex();
-            //if (c1.real||c2.real||c2.img||c2.img !=0){
+            //if (c1.real|c2.real|c2.img|c2.img !=0){
                 temp.real = c1.real * c2.real;
                 temp.img = c1.img * c2.img;
                 return temp;
@@ -62,7 +62,7 @@ namespace OperatorOverloading
         }
         public void Display()
         {
-            //if(real||img!=0){
+            //if(real|img!=0){
                 Console.WriteLine($"{real} + i{img}");
             //}
             //else{
