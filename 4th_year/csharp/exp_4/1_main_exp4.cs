@@ -2,17 +2,14 @@ using System;
 namespace exp_4main
 {
     class dele{
-        public delegate void matrix(int[,] arr1, int[,] arr2);       
-        public void sum(int[,] arr1, int[,] arr2){
+        public delegate void matrix(int[,] arr1, int[,] arr2, int n);       
+        public void sum(int[,] arr1, int[,] arr2, int n){
         /* calculate the sum of the matrix */ 
-        int i,j,n;
-    	  int[,] arr1 = new int[50,50];
-		    int[,] brr1 = new int[50,50];
-	    	int[,] crr1 = new int[50,50];
-
+        int i,j;
+        int[,] crr1 = new int[50,50];
         for(i=0;i<n;i++){
             for(j=0;j<n;j++){
-                crr1[i,j]=arr1[i,j]+brr1[i,j];
+                crr1[i,j]=arr1[i,j]+arr2[i,j];
             }
         }
         Console.WriteLine("\nThe Addition of two matrix is : \n");
@@ -30,7 +27,10 @@ namespace exp_4main
         static void Main(string[] args)
         {
             dele d = new dele(d.sum); //instance creation
-
+            int[,] arr1 = new int[50,50];
+            int[,] arr2 = new int[50,50];
+        	
+            int i, j, n;
             Console.Write("\n\naddition of two Matrices :\n");
             Console.Write("-----------------------------------------\n");  
             Console.Write("Input the size of the square matrix (less than 5): ");
@@ -52,7 +52,7 @@ namespace exp_4main
                 for(j=0;j<n;j++)
                 {
                     Console.Write("element - [{0},{1}] : ",i,j);
-                    brr1[i,j] = Convert.ToInt32(Console.ReadLine());			   
+                    arr2[i,j] = Convert.ToInt32(Console.ReadLine());			   
                 }
             }    
 
@@ -69,7 +69,7 @@ namespace exp_4main
             {
                 Console.Write("\n");
                     for(j=0;j<n;j++)
-                        Console.Write("{0}\t",brr1[i,j]);
+                        Console.Write("{0}\t",arr2[i,j]);
             }
         }
     }     
