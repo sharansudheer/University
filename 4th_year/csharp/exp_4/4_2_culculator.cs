@@ -14,7 +14,7 @@ namespace OperatorOverloading
         }
         //
         // + opertor overloading
-        public static complex operator +(complex c1, complex c2)
+        public (complex c1, complex c2)
         {
             complex temp = new complex();
             temp.real = c1.real + c2.real;
@@ -24,7 +24,7 @@ namespace OperatorOverloading
         
         //
         // " - "  subtraction opertor
-        public static complex operator -(complex c1, complex c2)
+        public (complex c1, complex c2)
         {
             complex temp = new complex();
             temp.real = c1.real - c2.real;
@@ -34,7 +34,7 @@ namespace OperatorOverloading
         
         //
         // " / " Divison opertor overloading
-        public static complex operator /(complex c1, complex c2)
+        public (complex c1, complex c2)
         {
             complex temp = new complex();
             //if ((c2.real & c2.img) != 0){
@@ -47,7 +47,7 @@ namespace OperatorOverloading
        
         //
         // " * " opertor
-        public static complex operator *(complex c1, complex c2)
+        public (complex c1, complex c2)
         {
             complex temp = new complex();
             //if (c1.real|c2.real|c2.img|c2.img !=0){
@@ -76,6 +76,7 @@ namespace OperatorOverloading
     {
         static void Main(string[] args)
         {
+            // try catch
             complex c1 = new complex(3, 7);
           
             complex c2 = new complex(5, 2);
