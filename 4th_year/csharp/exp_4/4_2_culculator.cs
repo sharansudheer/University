@@ -1,95 +1,94 @@
 //Initial Commit
 //No need for operater overloading
+using csharp_lab;
 using System;
-namespace OperatorOverloading
+
+namespace csharp_lab
 {
     public class complex
     {
         private int real;
         private int img;
-        public complex(int r = 0, int i = 0)
-        {
-            real = r;
-            img = i;
-        }
+        
+        
         //
         // + opertor overloading
-        public (complex c1, complex c2)
+        public int add(int c1, int c2)
         {
-            complex temp = new complex();
-            temp.real = c1.real + c2.real;
-            temp.img = c1.img + c2.img;
+            int temp = 0;
+            temp = c1 + c2;
             return temp;
         }
-        
-        //
-        // " - "  subtraction opertor
-        public (complex c1, complex c2)
+
+    //
+    // " - "  subtraction opertor
+    public int subtract  (int c1, int c2)
         {
-            complex temp = new complex();
-            temp.real = c1.real - c2.real;
-            temp.img = c1.img - c2.img;
+            
+            int temp = 0;
+            temp = c1 - c2;            
             return temp;
         }
-        
-        //
-        // " / " Divison opertor overloading
-        public (complex c1, complex c2)
-        {
-            complex temp = new complex();
-            //if ((c2.real & c2.img) != 0){
-                temp.real = c1.real / c2.real;
-                temp.img = c1.img / c2.img;
-                return temp;
-            //}
-                   
-        }
-       
-        //
-        // " * " opertor
-        public (complex c1, complex c2)
-        {
-            complex temp = new complex();
-            //if (c1.real|c2.real|c2.img|c2.img !=0){
-                temp.real = c1.real * c2.real;
-                temp.img = c1.img * c2.img;
-                return temp;
-            //}
-            /* else{
-                temp.real=0;
-                temp.img=0;
-            } */
-                
-        }
-        public void Display()
-        {
-            //if(real|img!=0){
-                Console.WriteLine($"{real} + i{img}");
-            //}
-            //else{
-                //Console.WriteLine(0);
-            //}
-        }
-    };
+
+//
+// " / " Divison opertor overloading
+    public int division(int c1, int c2)
+    {
+        int temp = 0;
+        //if ((c2 & c2) != 0){
+        temp = c1 / c2;
+        temp = c1 / c2;
+        return temp;
+        //}
+
+    }
+
+    //
+    // " * " opertor
+    public int multi(int c1, int c2)
+    {
+
+            //if (c1|c2|c2|c2 !=0){
+        int temp = 0;
+        temp = c1 * c2;
+        temp = c1 * c2;
+        return temp;
+        //}
+        /* else{
+            temp=0;
+            temp=0;
+        } */
+
+    }
+    public void Display()
+    {
+        //if(real|img!=0){
+        Console.WriteLine($"{temp}");
+        //}
+        //else{
+        //Console.WriteLine(0);
+        //}
+    }
+        };
 
     class Program
     {
         static void Main(string[] args)
         {
             // try catch
-            complex c1 = new complex(3, 7);
-          
-            complex c2 = new complex(5, 2);
-            
-            complex c4 = c1 + c2;
+            int c1 = new complex(3, 7);
+
+            int c2 = new complex(5, 2);
+
+            int c4 = c1 + c2;
             c4.Display();
-            complex c5 = c1 - c2;
+            int c5 = c1 - c2;
             c5.Display();
-            complex c6 = c1 * c2;
+            int c6 = c1 * c2;
             c6.Display();
-            complex c7 = c1 / c2;
+            int c7 = c1 / c2;
             c7.Display();
-            
+
         }
     }
 }
