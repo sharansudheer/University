@@ -1,0 +1,63 @@
+//
+    // " - "  subtraction opertor
+    public (int  c1, int  c2)
+        {
+            
+            temp.real = c1.real - c2.real;
+            temp.img = c1.img - c2.img;
+            return temp;
+        }
+
+//
+// " / " Divison opertor overloading
+public (int  c1, int  c2)
+{
+    
+    //if ((c2.real & c2.img) == 0){
+    temp.real = c1.real / c2.real;
+    temp.img = c1.img / c2.img;
+    return temp;
+    //}
+    //else{ throw error}
+
+}
+
+//
+// " * " opertor
+public (int  c1, int  c2)
+{
+    
+    //if (c1.real|c2.real|c2.img|c2.img !=0){
+    temp.real = c1.real * c2.real;
+    temp.img = c1.img * c2.img;
+    return temp;
+    //}
+    /* else{
+    
+    
+    
+        /*  
+        try{
+        }
+        catch{
+        }
+
+        */
+        int  c1 = new int (3, 7);
+
+        int  c2 = new int (5, 2);
+
+        int  c4 = c1 + c2;
+        c4.Display();
+        int  c5 = c1 - c2;
+        c5.Display();
+        int  c6 = c1 * c2;
+        c6.Display();
+        int  c7 = c1 / c2;
+        c7.Display();
+
+        temp.real=0;
+        temp.img=0;
+    } */
+
+}
