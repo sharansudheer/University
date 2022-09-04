@@ -50,6 +50,36 @@ namespace exp_4main
             }
             Console.Write("\n\n");
         }
+        public void mul(int[,] arr1, int[,] arr2, int n)
+        {
+            /* calculate the sum of the matrix */
+            //"Product is undefined. n columns of first matrix must equal to n rows of second matrix"
+            int i, j, k;
+            int[,] crr1 = new int[50, 50];
+            // looping through matrix 1 rows 
+            for (i = 0; i < n; i++)
+            {
+                // for each matrix 1 row, loop through matrix 2 columns
+                for (j = 0; j < n; j++)
+                {
+                    // loop through matrix 1 columns to calculate the dot product
+                    for (k = 0; k < n; k++)
+                    {
+                        crr1[i, j] += arr1[i, k] * arr2[k, j];
+                    }
+                }
+            }
+            Console.WriteLine("\nThe Product of two matrix is : \n");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("\n");
+                for (j = 0; j < n; j++)
+                {
+                    Console.Write("{0}\t", crr1[i, j]);
+                }
+            }
+            Console.Write("\n\n");
+        }
     }
     class Program
     {
@@ -86,10 +116,10 @@ namespace exp_4main
             }
             d.sum(arr1, arr2, n);
             d.sub(arr1, arr2, n);
+            d.mul(arr1, arr2, n);
 
             Console.ReadKey();
             
         }
     }
 }
-
