@@ -1,103 +1,61 @@
-//COMPLEX NUMBER
+
+using OperatorOverloading;
 using System;
+using static OperatorOverloading.Delhi;
+
 namespace OperatorOverloading
 {
-    public class complex
+    public class Delhi 
     {
+        public delegate void complex(int c1, int c2);
         private int real;
         private int img;
-        public complex(int r = 0, int i = 0)
+        public Delhi(int r = 0, int i = 0)
         {
             real = r;
             img = i;
         }
         //
         // + opertor overloading
-        public (complex c1, complex c2)
-        {
-            complex temp = new complex();
+        public static Delhi Sum(Delhi c1, Delhi c2)
+        {   
+            /*
+              Object initialization can be simplified
+              Remove unused parameter 'args'
+             */
+            Delhi temp = new Delhi();
             temp.real = c1.real + c2.real;
             temp.img = c1.img + c2.img;
             return temp;
+
         }
-        
-        //
-        // " - "  subtraction opertor
-        public (complex c1, complex c2)
-        {
-            complex temp = new complex();
-            temp.real = c1.real - c2.real;
-            temp.img = c1.img - c2.img;
-            return temp;
-        }
-        
-        //
-        // " / " Divison opertor overloading
-        public (complex c1, complex c2)
-        {
-            complex temp = new complex();
-            //if ((c2.real & c2.img) == 0){
-                temp.real = c1.real / c2.real;
-                temp.img = c1.img / c2.img;
-                return temp;
-            //}
-            //else{ throw error}
-                   
-        }
-       
-        //
-        // " * " opertor
-        public (complex c1, complex c2)
-        {
-            complex temp = new complex();
-            //if (c1.real|c2.real|c2.img|c2.img !=0){
-                temp.real = c1.real * c2.real;
-                temp.img = c1.img * c2.img;
-                return temp;
-            //}
-            /* else{
-                temp.real=0;
-                temp.img=0;
-            } */
-                
-        }
-        public void Display()
-        {
-            //if(real|img!=0){
-                Console.WriteLine($"{real} + i{img}");
-            //}
-            //else{
-                //Console.WriteLine(0);
-            //}
+
+    
+    public void Display()
+    {
+    //if(real|img!=0){
+    Console.WriteLine($"{real} + i{img}");
+    //}
+    //else{
+    //Console.WriteLine(0);
+    //}
         }
     };
 
     class Program
+{
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            
-            
-            /*  
-            try{
-            }
-            catch{
-            }
-            
-            */
-            complex c1 = new complex(3, 7);
-          
-            complex c2 = new complex(5, 2);
-            
-            complex c4 = c1 + c2;
-            c4.Display();
-            complex c5 = c1 - c2;
-            c5.Display();
-            complex c6 = c1 * c2;
-            c6.Display();
-            complex c7 = c1 / c2;
-            c7.Display();
-            
+            Delhi c1 = new Delhi(3, 7);
+            Delhi c2 = new Delhi(5, 2);
+
+
+
+
         }
     }
 }
+/* 
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/using-delegates
+https://www.geeksforgeeks.org/c-sharp-program-to-demonstrate-the-example-of-an-array-of-delegates/
+ */
