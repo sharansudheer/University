@@ -27,6 +27,29 @@ namespace exp_4main
             }
             Console.Write("\n\n");
         }
+        public void sub(int[,] arr1, int[,] arr2, int n)
+        {
+            /* calculate the sum of the matrix */
+            int i, j;
+            int[,] crr1 = new int[50, 50];
+            for (i = 0; i < n; i++)
+            {
+                for (j = 0; j < n; j++)
+                {
+                    crr1[i, j] = arr1[i, j] - arr2[i, j];
+                }
+            }
+            Console.WriteLine("\nThe Difference of two matrix is : \n");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write("\n");
+                for (j = 0; j < n; j++)
+                {
+                    Console.Write("{0}\t", crr1[i, j]);
+                }
+            }
+            Console.Write("\n\n");
+        }
     }
     class Program
     {
@@ -62,6 +85,8 @@ namespace exp_4main
                 }
             }
             d.sum(arr1, arr2, n);
+            d.sub(arr1, arr2, n);
+
             Console.ReadKey();
             
         }
