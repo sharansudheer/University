@@ -3,11 +3,20 @@ using OperatorOverloading;
 using System;
 using static OperatorOverloading.Delhi;
 
+/*
+ SECRET SAUCE FOR DELEGATES IN ORDER
+1) Delgate Delcartion
+2) Delegate Method Definition
+3) Delegate Instance Creation
+4) Delegate Function invovation
+ */
+
 namespace OperatorOverloading
 {
-    public class Delhi 
+    public delegate void complex(Delhi c1, Delhi c2); //Delegate declaration
+    public class Delhi
     {
-        public delegate void complex(int c1, int c2);
+        
         private int real;
         private int img;
         public Delhi(int r = 0, int i = 0)
@@ -17,8 +26,8 @@ namespace OperatorOverloading
         }
         //
         // + opertor overloading
-        public static Delhi Sum(Delhi c1, Delhi c2)
-        {   
+        public static void Sum(Delhi c1, Delhi c2) //delegate method definition
+        {
             /*
               Object initialization can be simplified
               Remove unused parameter 'args'
@@ -26,30 +35,34 @@ namespace OperatorOverloading
             Delhi temp = new Delhi();
             temp.real = c1.real + c2.real;
             temp.img = c1.img + c2.img;
-            return temp;
+            Console.WriteLine($"{temp.real} + i{temp.img}");
 
         }
-
-    
-    public void Display()
-    {
-    //if(real|img!=0){
-    Console.WriteLine($"{real} + i{img}");
-    //}
-    //else{
-    //Console.WriteLine(0);
-    //}
-        }
-    };
-
+    }  
     class Program
 {
     static void Main(string[] args)
     {
             Delhi c1 = new Delhi(3, 7);
             Delhi c2 = new Delhi(5, 2);
+            complex oprat = Delhi.Sum;
+            /* complex[] oprat = { Delhi.Sum, Delhi.Multi}; // delegate instance creation
+             complex action;
+            action = oprat[n-1]
+            action(c1,c2); // delegate invocation
+             */
 
+            /* 
+             //Multicast Delegates
+             complex oprat1 = Delhi.Sum;
+            complex oprat2 = Delhi.Sub;
+            complex oprat3 = Delhi.Mul;
+            complex rat = oprat1 + oprat2 + oprat3;
+            rat(c1,c2);
 
+             */
+
+            Console.ReadKey();
 
 
         }
