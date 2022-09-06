@@ -1,4 +1,3 @@
-
 using OperatorOverloading;
 using System;
 using static OperatorOverloading.Delhi;
@@ -14,9 +13,11 @@ using static OperatorOverloading.Delhi;
 namespace OperatorOverloading
 {
     public delegate void complex(Delhi c1, Delhi c2); //Delegate declaration
+
+    
     public class Delhi
     {
-        
+        public event complex Comp; //event declaration
         private int real;
         private int img;
         public Delhi(int r = 0, int i = 0)
@@ -26,7 +27,7 @@ namespace OperatorOverloading
         }
         //
         // + opertor overloading
-        public static void Sum(Delhi c1, Delhi c2) //delegate method definition
+        public static void Sum(Delhi c1, Delhi c2) //delegate method definition, event handler method
         {
             /*
               Object initialization can be simplified
@@ -38,16 +39,22 @@ namespace OperatorOverloading
             Console.WriteLine($"{temp.real} + i{temp.img}");
 
         }
-    }  
+    }
     class Program
-{
-    static void Main(string[] args)
     {
+        static void Main(string[] args)
+        {
             Delhi c1 = new Delhi(3, 7);
             Delhi c2 = new Delhi(5, 2);
             complex oprat = Delhi.Sum;
             /* complex[] oprat = { Delhi.Sum, Delhi.Multi}; // delegate instance creation
              complex action;
+            Delhi ev = new Delhi();
+            ev.Comp += new complex(Delhi.Sum);
+            ev.Comp(c1,c2); 
+            
+            /* 
+            unwanted
             action = oprat[n-1]
             action(c1,c2); // delegate invocation
              */
@@ -59,7 +66,6 @@ namespace OperatorOverloading
             complex oprat3 = Delhi.Mul;
             complex rat = oprat1 + oprat2 + oprat3;
             rat(c1,c2);
-
              */
 
             Console.ReadKey();
@@ -71,4 +77,8 @@ namespace OperatorOverloading
 /* 
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/using-delegates
 https://www.geeksforgeeks.org/c-sharp-program-to-demonstrate-the-example-of-an-array-of-delegates/
+ */
+//
+/* 
+
  */
