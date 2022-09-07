@@ -105,6 +105,86 @@ namespace exp_5main
     }
 }
 //
-/* 
+/*
+
+#include <iostream>
+#include <regex>
+using namespace std;
+ 
+// Function to remove uppercase characters
+string removingUpperCaseCharacters(string str)
+{
+  // Create a regular expression
+  const regex pattern("[A-Z]");
+ 
+  // Replace every matched pattern with the
+  // target string using regex_replace() method
+  return regex_replace(str, pattern, "");
+}
+ 
+// Function to remove lowercase characters
+string removingLowerCaseCharacters(string str)
+{
+  // Create a regular expression
+  const regex pattern("[a-z]");
+ 
+  // Replace every matched pattern with the
+  // target string using regex_replace() method
+  return regex_replace(str, pattern, "");
+}
+ 
+// Function to remove special characters
+string removingSpecialCharacters(string str)
+{
+  // Create a regular expression
+  const regex pattern("[^A-Za-z0-9]");
+ 
+  // Replace every matched pattern with the
+  // target string using regex_replace() method
+  return regex_replace(str, pattern, "");
+}
+ 
+// Function to remove numeric characters
+string removingNumericCharacters(string str)
+{
+  // Create a regular expression
+  const regex pattern("[0-9]");
+ 
+  // Replace every matched pattern with the
+  // target string using regex_replace() method
+  return regex_replace(str, pattern, "");
+}
+ 
+// Function to remove non-numeric characters
+string removingNonNumericCharacters(string str)
+{
+  // Create a regular expression
+  const regex pattern("[^0-9]");
+ 
+  // Replace every matched pattern with the
+  // target string using regex_replace() method
+  return regex_replace(str, pattern, "");
+}
+ 
+int main()
+{
+  // Given String str
+  string str = "GFGgfg123$%";
+ 
+  // Print the strings after the simultaneous
+  // modifications
+  cout << "After removing uppercase characters: "
+       << removingUpperCaseCharacters(str) << endl;
+  cout << "After removing lowercase characters: "
+       << removingLowerCaseCharacters(str) << endl;
+  cout << "After removing special characters: "
+       << removingSpecialCharacters(str) << endl;
+  cout << "After removing numeric characters: "
+       << removingNumericCharacters(str) << endl;
+  cout << "After removing non-numeric characters: "
+       << removingNonNumericCharacters(str) << endl;
+ 
+  return 0;
+}
 
  */
