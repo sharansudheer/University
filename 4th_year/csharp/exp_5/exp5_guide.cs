@@ -186,5 +186,9 @@ int main()
  
   return 0;
 }
-
+if (!Regex.Match(firstNameTextBox.Text, "^[A-Z][a-zA-Z]*$").Success) {}  
+    if (!Regex.Match(addressTextBox.Text, @"^[0-9]+\s+([a-zA-Z]+|[a-zA-Z]+\s[a-zA-Z]+)$").Success)  
+  
+if (!Regex.Match(cityTextBox.Text, @"^([a-zA-Z]+|[a-zA-Z]+\s[a-zA-Z]+)$").Success)  
+     if (!Regex.Match(stateTextBox.Text, @"^([a-zA-Z]+|[a-zA-Z]+\s[a-zA-Z]+)$").Success) 
  */
