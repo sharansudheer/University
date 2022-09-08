@@ -100,3 +100,11 @@ class Square {
         Console.WriteLine(s1 <= s4); //Calls <= operator
     }
 }
+
+/*
+
+public static System.Windows.Media.Matrix Multiply (System.Windows.Media.Matrix trans1, System.Windows.Media.Matrix trans2);
+ 
+ https://docs.microsoft.com/en-us/dotnet/api/system.windows.media.matrix.multiply?view=windowsdesktop-6.0 
+ */
+
