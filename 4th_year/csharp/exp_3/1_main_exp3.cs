@@ -92,4 +92,15 @@ namespace OperatorOverloading
     }
 }
 
-    
+/*
+    try  
+    {  
+    int i = 20;  
+    // Suspect code  
+    int result = i / 0;  
+    }  
+    catch (DivideByZeroException ex)  
+    {  
+    Console.WriteLine("Attempted divide by zero. {0}", ex.Message);  
+    }  
+  */  
