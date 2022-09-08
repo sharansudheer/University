@@ -103,4 +103,19 @@ namespace OperatorOverloading
     {  
     Console.WriteLine("Attempted divide by zero. {0}", ex.Message);  
     }  
+    
+    Throwing exceptions
+    
+    FileStream logFile = null!;
+    public void OpenLog(FileInfo fileName, FileMode mode) { }
+
+    public void WriteLog()
+    {
+        if (!logFile.CanWrite)
+        {
+            throw new InvalidOperationException("Logfile cannot be read-only");
+        }
+        // Else write data to the log and return.
+    }
+}
   */  
