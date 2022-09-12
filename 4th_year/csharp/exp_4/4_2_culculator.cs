@@ -2,80 +2,56 @@
 //No need for operater overloading
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace csharp_lab
+namespace ConsoleApplication1
 {
-    public class calculator
-    {   
-        public int temp;
-        //
-        // + opertor overloading
-        public int add(int c1, int c2)
-        {
-            
-            temp = c1 + c2;
-            return temp;
-        }
-
-        //
-        // " - "  subtraction opertor
-        public int subtract(int c1, int c2)
-        {
-
-            
-            temp = c1 - c2;
-            return temp;
-        }
-
-        //
-        // " / " Divison opertor overloading
-        public int division(int c1, int c2)
-        {
-
-            //if ((c2 & c2) != 0){
-            temp = c1 / c2;
-            return temp;
-            //}
-
-        }
-
-        //
-        // " * " opertor
-        public int multi(int c1, int c2)
-        {
-
-            //if (c1|c2|c2|c2 !=0){
-            temp = c1 * c2;
-            return temp;
-            //}
-            /* else{
-                temp=0;
-                temp=0;
-            } */
-
-        }
-        public void Display()
-        {
-            //if(real|img!=0){
-            Console.WriteLine($"{temp}");
-            //}
-            //else{
-            //Console.WriteLine(0);
-            //}
-        }
-    };
-
+    delegate void Check(int a1, int a2);
     class Program
     {
+        public event Check MyEvent;
+        int s1, s2;
+
+        public Program()
+        {
+            s1 = 0;
+            s2 = 0;
+        }
+        public Program (int n1, int n2)
+        {
+            s1 = n1;
+            s2 = n2;
+        }
+       
+
+        public void sum(int a, int b) { Console.WriteLine(a + b); }
+        public void sub(int a, int b) { Console.WriteLine(a - b); }
+        public void mul(int a, int b) { Console.WriteLine(a * b); }
+
+
+
         static void Main(string[] args)
         {
-            // try catch
-            calculator cal = new calculator();
+            Program p = new Program();        
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            p.MyEvent = new Check(p.sum);
+            p.MyEvent(a, b);
 
            
+            
 
+           
+            Console.ReadLine();
         }
+
+
     }
+
 }
+
+
 
