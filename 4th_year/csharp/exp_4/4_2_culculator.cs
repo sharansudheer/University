@@ -1,6 +1,3 @@
-//Initial Commit
-//No need for operater overloading
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    delegate void Check(int a1, int a2);
+    delegate void Check(int a1, int a2); // Delegate Declaration
     class Program
     {
-        public event Check MyEvent;
+        public event Check MyEvent; //event declaration
         int s1, s2;
 
         public Program()
@@ -27,7 +24,7 @@ namespace ConsoleApplication1
         }
        
 
-        public void sum(int a, int b) { Console.WriteLine(a + b); }
+        public void sum(int a, int b) { Console.WriteLine(a + b); } //delegate method definition, event handler method
         public void sub(int a, int b) { Console.WriteLine(a - b); }
         public void mul(int a, int b) { Console.WriteLine(a * b); }
 
@@ -38,13 +35,19 @@ namespace ConsoleApplication1
             Program p = new Program();        
             int a = int.Parse(Console.ReadLine());
             int b = int.Parse(Console.ReadLine());
-            p.MyEvent = new Check(p.sum);
+            Console.WriteLine("Sum is");
+            p.MyEvent = new Check(p.sum); //event binding
+            p.MyEvent(a, b);
+            Console.WriteLine("Diff is");
+            p.MyEvent = new Check(p.sub);
+            p.MyEvent(a, b);
+            Console.WriteLine("Product is");
+            p.MyEvent = new Check(p.mul);
             p.MyEvent(a, b);
 
-           
-            
 
-           
+
+
             Console.ReadLine();
         }
 
@@ -52,6 +55,4 @@ namespace ConsoleApplication1
     }
 
 }
-
-
 
