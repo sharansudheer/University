@@ -6,25 +6,24 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    delegate void Check(int a1, int a2); // Delegate Declaration
+    public delegate string Check(string str);
     class Program
     {
-        public event Check MyEvent; //event declaration
-        int s1, s2;
+        event Check MyEvent;
 
         public Program()
         {
-            s1 = 0;
-            s2 = 0;
+            this.MyEvent += new Check(this.User);
         }
-        public Program (int n1, int n2)
+        public string User(string str)
         {
-            s1 = n1;
-            s2 = n2;
+            return str;
         }
-       
+        public delegate void addnum(int a, int b);
+        public delegate void subnum(int a, int b);
+        public delegate void mulnum(int a, int b);
 
-        public void sum(int a, int b) { Console.WriteLine(a + b); } //delegate method definition, event handler method
+        public void sum(int a, int b) { Console.WriteLine(a + b); }
         public void sub(int a, int b) { Console.WriteLine(a - b); }
         public void mul(int a, int b) { Console.WriteLine(a * b); }
 
@@ -32,22 +31,36 @@ namespace ConsoleApplication1
 
         static void Main(string[] args)
         {
-            Program p = new Program();        
-            int a = int.Parse(Console.ReadLine());
-            int b = int.Parse(Console.ReadLine());
-            Console.WriteLine("Sum is");
-            p.MyEvent = new Check(p.sum); //event binding
-            p.MyEvent(a, b);
-            Console.WriteLine("Diff is");
-            p.MyEvent = new Check(p.sub);
-            p.MyEvent(a, b);
-            Console.WriteLine("Product is");
-            p.MyEvent = new Check(p.mul);
-            p.MyEvent(a, b);
+            bool trig=true;
+            Program p = new Program();
+            addnum add_del = new addnum(p.sum);
+            subnum sub_del = new subnum(p.sub);
+            mulnum mul_del = new mulnum(p.mul);
+            
+            while(trig != false)
+            {
+                int a = int.Parse(Console.ReadLine());
+                int b = int.Parse(Console.ReadLine());
+                if (a < 0 || b < 0)
+                {
+                    Program obj1 = new Program();
+                    string result = obj1.MyEvent("Enter Number Greater than 0");
+                    Console.WriteLine(result);
+                  
+                  
+
+                }
+                else
+                {
+                    add_del(a, b);
+                    sub_del(a, b);
+                    mul_del(a, b);
+                    trig = false;
+                }
+            } 
 
 
-
-
+            
             Console.ReadLine();
         }
 
@@ -55,4 +68,3 @@ namespace ConsoleApplication1
     }
 
 }
-
