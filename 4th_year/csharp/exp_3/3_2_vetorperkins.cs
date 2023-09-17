@@ -44,11 +44,15 @@ namespace OperatorOverloading
             Opertor overloading requires a 
             return statement and return cannot be void. 
             How to fix it??
-            if ((c2.x & c2.y & c2.z) != 0){
-            .......
-            }else {
-                Console.WriteLine("ZZ");
-                return;}
+            public static vector operator /(vector c1, vector c2)
+            {
+                if ((c2.x & c2.y & c2.z) != 0){
+                .......
+                }else {
+                    Console.WriteLine("ZZ");
+                    return;
+                 }
+            }
             */
             vector temp = new vector();
             //if ((c2.x && c2.y) != 0){
